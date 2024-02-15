@@ -1,6 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Clase principal que realiza la criba de Eratóstenes para encontrar números primos hasta un valor dado.
+ */
+
 public class Main {
+
+    /**
+     * Método principal que solicita al usuario un número y muestra el vector inicial y el vector de primos hasta ese número.
+     * @param args Los argumentos de la línea de comandos (no se utilizan en este caso).
+     */
+
     public static void main(String[] args) {
         Scanner teclado=new Scanner(System.in);
         System.out.println("Introduce el número para la criba de Erastótenes:");
