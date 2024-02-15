@@ -76,7 +76,7 @@ public class Main {
 
     /**
      * Elimina los múltiplos de un número primo marcándolos como no primos.
-     * @param i El número primo cuyos múltiplos se deben eliminar.
+     * @param i Número primo cuyos múltiplos se deben eliminar.
      * @param esPrimo Array de booleanos que indica si cada número es primo.
      * @param dim El tamaño del array.
      */
