@@ -8,7 +8,7 @@ public class Main {
 
     /**
      * Método principal que solicita al usuario un número y muestra el vector inicial y el vector de primos hasta ese número.
-     * @param args Los argumentos de la línea de comandos (no se utilizan en este caso).
+     * @param args Los argumentos de la línea de comandos.
      */
 
     public static void main(String[] args) {
@@ -28,6 +28,12 @@ public class Main {
             System.out.print(vector[i]+"\t");
         }
     }
+
+    /**
+     * Genera un vector de números primos hasta el valor especificado.
+     * @param max El valor máximo hasta el cual se deben generar los números primos.
+     * @return Un vector que contiene los números primos hasta el valor especificado.
+     */
     public static int[] generarPrimos (int max) {
         if (max < 2) {
             return new int[0];
@@ -42,12 +48,23 @@ public class Main {
         return primos;
     }
 
+    /**
+     * Inicializa un array de booleanos para indicar si cada número es primo.
+     * @param esPrimo El array de booleanos que se inicializará.
+     */
+
     public static void inicializarEsPrimo(boolean[] esPrimo) {
         esPrimo[0] = esPrimo[1] = false;
         for (int i = 2; i < esPrimo.length; i++) {
             esPrimo[i] = true;
         }
     }
+
+    /**
+     * Realiza la criba de Eratóstenes.
+     * @param esPrimo Array de booleanos que indica si cada número es primo.
+     * @param dim El tamaño del array.
+     */
 
     public static void criba(boolean[] esPrimo, int dim) {
         for (int i = 2; i <= Math.sqrt(dim); i++) {
@@ -57,11 +74,25 @@ public class Main {
         }
     }
 
+    /**
+     * Elimina los múltiplos de un número primo marcándolos como no primos.
+     * @param i El número primo cuyos múltiplos se deben eliminar.
+     * @param esPrimo Array de booleanos que indica si cada número es primo.
+     * @param dim El tamaño del array.
+     */
+
     public static void eliminarMultiplos(int i, boolean[] esPrimo, int dim) {
         for (int j = 2 * i; j < dim; j += i) {
             esPrimo[j] = false;
         }
     }
+
+    /**
+     * Cuenta la cantidad de números primos en el array.
+     * @param esPrimo Array de booleanos que indica si cada número es primo.
+     * @param dim El tamaño del array.
+     * @return La cantidad de números primos en el array.
+     */
 
     public static int contar(boolean[] esPrimo, int dim) {
         int cuenta = 0;
@@ -72,6 +103,12 @@ public class Main {
         }
         return cuenta;
     }
+
+    /**
+     * Rellena un vector con los números primos marcados como verdaderos en el array de primos.
+     * @param primos El vector que se rellenará con números primos.
+     * @param esPrimo Array de booleanos que indica si cada número es primo.
+     */
 
     public static void rellenarVectorPrimos(int[] primos, boolean[] esPrimo) {
         for (int i = 0, j = 0; i < esPrimo.length; i++) {
